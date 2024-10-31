@@ -138,7 +138,6 @@ int main(){ //função principal
 		printf ("\t2 - Consultar usuário\n");
 		printf ("\t3 - Deletar usuário\n\n");
 		printf ("\t0 - Fechar o programa\n\n\n");
-		printf ("\tTESTE GITHUB!\n\n\n\n\n");
 		printf ("Digite o número da ação desejada:");	
 	
 		scanf ("%d", &opcao); //armazenando a opção do usuário
