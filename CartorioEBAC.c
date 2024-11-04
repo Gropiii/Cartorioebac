@@ -121,12 +121,42 @@ int deletar(){ //função para deletar
 	fclose(file);
 }
 
+void telaLogin(){ //pedindo login
+
+    char login[15] = "admin";
+    char login1[15];
+    char senha[15] = "admin";
+    char senha1[15];        
+    int login_efetuado = 0; //0 - Falso e  1 - Verdadeiro
+
+    while(!login_efetuado){
+        printf("Digite o Login: ");
+        scanf("%s", login1);
+
+        printf("Digite a Senha: ");
+        scanf("%s", senha1);
+
+        if (strcmp(login, login1) == 0 && strcmp(senha, senha1) == 0){
+            printf("\n\nLOGADO!\n\n");
+            login_efetuado = 1;
+        }
+        else{
+		printf("\n\nDADOS INVALIDOS!\n\n");
+		system("pause");
+		system("cls");
+		}
+	}
+
+}
+
 int main(){ //função principal
 	
 	int opcao=0; //Definindo variáveis
 	int laco=1;
-
+	telaLogin();
+	
 	for(laco=1;laco=1;){ //fazendo o loop para o programa não fechar
+	
 	
 		system("cls"); //Limpar a tela
 	
