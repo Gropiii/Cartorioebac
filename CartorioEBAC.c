@@ -79,6 +79,7 @@ int consultar(){ //função para consultar
 	
 	char cpf [15];
 	char conteudo [200];
+	char simnao[1]="s";
 	
 	printf ("Digite o CPF  para a consulta:\n");
 	scanf ("%s",cpf);
@@ -96,32 +97,51 @@ int consultar(){ //função para consultar
 	printf("\n\n");
 	system("pause");
 	fclose(file);
-}
+	
+	system ("cls");
+	printf ("Deseja fazer nova consulta? (s/n)");
+	scanf ("%s", &simnao);
+	if (strcmp(simnao,"s") ==0) {
+		system ("cls");
+		consultar();
+	}
+	}
 
 int deletar(){ //função para deletar
 	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem do programa
 	char cpf[15];
+	char simnao[1]="s";
 	
 	printf ("Digite o CPF que pretende deletar: ");
 	scanf ("%s",cpf);
 	
 	FILE *file;
+	file = fopen(cpf,"r");
 	
-	
-	if(file != NULL){
+	if(file== NULL){
+		printf ("\n\n\nCPF não encontrado!\n\n\n\n");
+		system("pause");		
+	}
+	else {
+		fclose(file);
 		remove(cpf);
 		file = fopen(cpf,"r");
 		printf("\n\nO CPF: %s foi deletado com sucesso.\n\n\n",cpf);
 		system("pause");
 	}
-	else {
-		printf ("\n\n\nCPF não encontrado!\n\n\n\n");
-		system("pause");		
-	}
 	fclose(file);
-}
 
-void telaLogin(){ //pedindo login
+	system ("cls");
+	printf ("Deseja deletar outro usuário? (s/n)");
+	scanf ("%s", &simnao);
+	if (strcmp(simnao,"s") ==0) {
+		system ("cls");
+		deletar();
+	}
+}
+	
+
+void telaLogin(){ //função login
 
     char login[15] = "admin";
     char login1[15];
@@ -153,7 +173,7 @@ int main(){ //função principal
 	
 	int opcao=0; //Definindo variáveis
 	int laco=1;
-	telaLogin();
+	//telaLogin();
 	
 	for(laco=1;laco=1;){ //fazendo o loop para o programa não fechar
 	
