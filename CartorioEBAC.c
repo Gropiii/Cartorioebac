@@ -67,7 +67,6 @@ int registrar(){ //função para resgistrar
 		printf ("Deseja voltar ao menu inicial? (s/n)\n\n");
 		scanf ("%s", &simnao);
 		if (strcmp(simnao,"s") ==0){
-			main();
 		}
 		else registrar();
 	}
@@ -173,7 +172,7 @@ int main(){ //função principal
 	
 	int opcao=0; //Definindo variáveis
 	int laco=1;
-	//telaLogin();
+	telaLogin();
 	
 	for(laco=1;laco=1;){ //fazendo o loop para o programa não fechar
 	
